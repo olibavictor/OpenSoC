@@ -1,0 +1,93 @@
+{
+  "extractors": [
+    {
+      "title": "json",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "json",
+      "extractor_config": {
+        "regex_value": "(\\{.*\\})"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "json_parser",
+      "extractor_type": "json",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "json",
+      "target_field": "",
+      "extractor_config": {
+        "list_separator": ", ",
+        "kv_separator": "=",
+        "key_prefix": "",
+        "key_separator": "_",
+        "replace_key_whitespace": false,
+        "key_whitespace_replacement": "_"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SHA256_hash",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "data_win_eventdata_hash",
+      "target_field": "SHA256_hash",
+      "extractor_config": {
+        "regex_value": "SHA256=(\\w+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "MD5_hash",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "data_win_eventdata_hash",
+      "target_field": "MD5_hash",
+      "extractor_config": {
+        "regex_value": "MD5=(\\w+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "MD5_hash_malware",
+      "extractor_type": "regex_replace",
+      "converters": [
+        {
+          "type": "lowercase",
+          "config": {}
+        },
+        {
+          "type": "lookup_table",
+          "config": {
+            "lookup_table_name": "Malware Hash Validation (TeamCymru)"
+          }
+        }
+      ],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "MD5_hash",
+      "target_field": "MD5_hash_malware",
+      "extractor_config": {
+        "regex": "$",
+        "replacement": ".hash.cymru.com",
+        "replace_all": true
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    }
+  ],
+  "version": "4.3.7"
+}
