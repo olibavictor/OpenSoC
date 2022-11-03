@@ -1,0 +1,135 @@
+{
+  "extractors": [
+    {
+      "title": "http_response_status_code",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 1,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "http_response_status_code",
+      "extractor_config": {
+        "regex_value": "\"\\s(\\d+)\\s"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "http_user_agent",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 2,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "http_user_agent",
+      "extractor_config": {
+        "index": 6,
+        "split_by": "\""
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "src_ip",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "src_ip",
+      "extractor_config": {
+        "index": 1,
+        "split_by": " "
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "http_request_method",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 3,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "http_request_method",
+      "extractor_config": {
+        "regex_value": "\"(\\w+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "http_request_referrer",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 4,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "http_request_referrer",
+      "extractor_config": {
+        "index": 4,
+        "split_by": "\""
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "http_request_original",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 5,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "http_request_original",
+      "extractor_config": {
+        "index": 2,
+        "split_by": "\""
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "http_request_url_path ",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 6,
+      "cursor_strategy": "copy",
+      "source_field": "http_request_original",
+      "target_field": "http_request_url_path",
+      "extractor_config": {
+        "regex_value": "\\s(\\S+)\\s"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "http_request_date",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 7,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "http_request_date",
+      "extractor_config": {
+        "regex_value": "\\[(\\d+\\/\\w+\\/\\d+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "http_request_time",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 8,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "http_request_time",
+      "extractor_config": {
+        "regex_value": "\\:(\\d+\\:\\d+:\\d+)\\s"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    }
+  ],
+  "version": "4.3.7"
+}
