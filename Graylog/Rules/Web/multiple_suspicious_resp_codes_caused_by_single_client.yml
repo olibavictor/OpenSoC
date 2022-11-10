@@ -4,8 +4,6 @@ level: medium
 tags:
 - attack.initial_access
 - attack.t1190
-logsource:
-  category: web
 detection:
   selection:
     sc-status:
@@ -16,10 +14,13 @@ detection:
   timeframe: 10m
   condition: selection | count() by clientip > 10
 fields:
-- client_ip
-- vhost
-- url
-- response
+- src_ip
+- src_ip_geo_city
+- src_ip_geo_country
+- http_response_status_code
+- mitre_id : T1190
+- mitre_tatic : Initial Access
+- detection_rule_category: webserver
 falsepositives:
 - Unstable application
 - Application that misuses the response codes
