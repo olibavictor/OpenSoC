@@ -1,15 +1,11 @@
 title: Multiple Suspicious Resp Codes Caused by Single Client
-id: 6fdfc796-06b3-46e8-af08-58f3505318af
-status: test
 description: Detects possible exploitation activity or bugs in a web application
-author: Thomas Patzke
-date: 2017/02/19
-modified: 2021/11/27
+level: medium
 tags:
 - attack.initial_access
 - attack.t1190
 logsource:
-  category: webserver
+  category: web
 detection:
   selection:
     sc-status:
@@ -27,4 +23,4 @@ fields:
 falsepositives:
 - Unstable application
 - Application that misuses the response codes
-level: medium
+
