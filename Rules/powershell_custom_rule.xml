@@ -1,0 +1,31 @@
+<group name="windows-custom,">
+
+  <rule id="100535" level="5">
+    <if_sid>60009</if_sid>
+    <field name="win.system.providerName">^Microsoft-Windows-PowerShell$</field>
+    <group>powershell,</group>
+    <description>Powershell Information EventLog</description>
+  </rule>
+
+  <rule id="100536" level="7">
+    <if_sid>60010</if_sid>
+    <field name="win.system.providerName">^Microsoft-Windows-PowerShell$</field>
+    <group>powershell,</group>
+    <description>Powershell Warning EventLog</description>
+  </rule>
+
+  <rule id="100537" level="10">
+    <field name="win.system.providerName">^Microsoft-Windows-PowerShell$</field>
+    <field name="win.system.severityValue">^ERROR$</field>
+    <group>powershell,</group>
+    <description>Powershell Error EventLog</description>
+  </rule>
+
+  <rule id="100538" level="13">
+    <if_sid>60012</if_sid>
+    <field name="win.system.providerName">^Microsoft-Windows-PowerShell$</field>
+    <group>powershell,</group>
+    <description>Powershell Critical EventLog</description>
+  </rule>
+
+</group>
