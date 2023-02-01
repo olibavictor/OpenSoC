@@ -15,6 +15,11 @@
       <options>no_full_log</options>
 		<description>Sysmon - Event 2: A process changed a file creation time.</description>
 	</rule>
+	<rule id="100603" level="5">
+		<if_sid>61605</if_sid>
+      <options>no_full_log</options>
+		<description>Sysmon - Event 3: Network connection by $(win.eventdata.sourceImage).</description>
+	</rule>
 	<rule id="100604" level="5">
 		<if_sid>61606</if_sid>
       <options>no_full_log</options>
