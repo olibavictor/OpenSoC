@@ -6,9 +6,9 @@ import json
 from datetime import datetime, timezone, timedelta
 
 def GetToken():
-        tenantId = '55c016b2-c932-4ce4-8cfe-992e3903e553'
-        clientId = 'b1bb3cb5-bef2-479f-a38b-8eb6432cb6e6'
-        clientSecret = 'LDH8Q~~EwB6FG4oKSJ-CacqYWBvmS4R9-HxvBaty'
+        tenantId = 'change'
+        clientId = 'change'
+        clientSecret = 'change'
         resourceAPI = 'https://graph.microsoft.com'
         url = "https://login.microsoftonline.com/" + tenantId + "/oauth2/token"
         data = {
@@ -23,7 +23,7 @@ def GetToken():
         return auth_token
 
 def GetAlert(auth_token, createdDateTime):
-        url = "https://graph.microsoft.com/v1.0/security/alerts?$filter=vendorInformation/provider eq 'Office 365 Security and C                                       ompliance' or vendorInformation/provider eq 'MCAS' and createdDateTime gt " + createdDateTime + "&$top=1"
+        url = "https://graph.microsoft.com/v1.0/security/alerts?$filter=vendorInformation/provider eq 'Office 365 Security and Compliance' or vendorInformation/provider eq 'MCAS' and createdDateTime gt " + createdDateTime + "&$top=1"
         headers = {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
