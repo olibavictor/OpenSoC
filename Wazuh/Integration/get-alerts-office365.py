@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 #By Oliba
+#Captura alertas da plataforma de segurança microsft (Office365) e gera registros em um arquivo de log.
 
 import requests
 import json
