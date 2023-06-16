@@ -1,0 +1,15 @@
+<!-- Decoder to pfsense Syslog -->
+
+<!-- Pfsense example log
+Jun  9 19:05:29 filterlog[12309]: 82,,,1000002761,em0,match,pass,out,4,0x0,,127,17771,0,DF,17,udp,1278,192.168.15.2,142.251.128.98,26760,443,1258 
+-->
+
+<decoder name="pfsense-custom">
+    <prematch>filterlog</prematch>
+</decoder>
+
+<decoder name="pfsense-fields">
+    <parent>pfsense-custom</parent>
+    <regex>^(\w+)[\d+]: \S*,\S*,\S*,(\S*),\S*,\S*,(\S*),\S*,\S*,\S*,\S*,\S*,\S*,\S*,\S*,\S*,(\S*),\S*,(\S*),(\S*),(\d*),(\d*),\S*</regex>
+    <order>logsource,id,action,protocol,srcip,dstip,srcport,dstport</order>
+</decoder>
