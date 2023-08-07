@@ -1,4 +1,4 @@
-### Teste
+### Hierarquia de regras Wazuh
 
 Alguma coisa
 
