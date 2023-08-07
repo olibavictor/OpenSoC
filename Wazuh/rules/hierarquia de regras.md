@@ -1,13 +1,13 @@
-### Hierarquia de regras Wazuh
+## Hierarquia de regras Wazuh
 
 Alguma coisa
 
-## Logs
+### Logs
 ```
 2019/01/02 13:16:00 hostname1 securityapp: INFO: srcuser="Bob" action="called" dstusr="Alice"
 2019/01/02 13:17:00 hostname1 securityapp: INFO: action="logged on" srcuser="Bob"
 ```
-## Exemplo regra única
+### Exemplo regra única
 ```
 <group name="securityapp, custom,">
 
@@ -19,7 +19,7 @@ Alguma coisa
 
 </group>
 ```
-## Exemplo de regra condicional
+### Exemplo de regra condicional
 ```
 <group name="securityapp, custom,">
 
