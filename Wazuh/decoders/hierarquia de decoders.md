@@ -1,4 +1,4 @@
-## Hierarquia de regras Wazuh
+## Hierarquia de decodificadores Wazuh
 
 ### Log1
 ```
@@ -40,7 +40,7 @@ Apr 12 14:31:38 hostname1 securityapp: INFO: srcuser="Bob" action="called" dstus
 Apr 01 19:21:24 hostname2 securityapp: INFO: action="logged on" srcuser="Bob"
 ```
 
-### Exemplo de regra condicional
+### Exemplo de decodificador condicional
 ```
 <decoder name="securityapp">
   <program_name>securityapp</program_name>
