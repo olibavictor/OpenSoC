@@ -1,7 +1,5 @@
 ## Hierarquia de regras Wazuh
 
-Alguma coisa
-
 ### Logs
 ```
 2019/01/02 13:16:00 hostname1 securityapp: INFO: srcuser="Bob" action="called" dstusr="Alice"
