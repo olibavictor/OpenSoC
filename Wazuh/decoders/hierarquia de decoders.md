@@ -6,15 +6,11 @@
 ```
 ### Exemplo decoder único
 ```
-<group name="securityapp, custom,">
-
-  <rule id="1337" level="3">
-    <decoded_as>securityapp</decoded_as>
-    <field name="action">called</field>
-    <description>User called</description>
-  </rule>
-
-</group>
+<decoder name="securityapp">
+  <program_name>securityapp</program_name>
+  <regex>(\w+): srcuser="(\.+)" action="(\.+)" dstusr="(\.+)"</regex>
+  <order>type,srcuser,action,dstuser</order>
+</decoder>
 ```
 
 ### Output
