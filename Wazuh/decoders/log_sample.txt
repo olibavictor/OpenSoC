@@ -1,0 +1,6 @@
+Ago 08 15:00:00 serve01 canal_youtube: log="INFO" user="Rafael" action="se inscreveu no canal" origem="BR"
+Ago 08 15:02:00 serve01 canal_youtube: log="INFO" user="Marcelo" action="se inscreveu no canal" origem="EUA"
+Ago 08 15:05:00 serve01 canal_youtube: log="INFO" user="Rafael" action="Deixou o like" origem="BR"
+Ago 08 15:07:00 serve01 canal_youtube: log="INFO" user="Marcelo" action="Comentou em um video do canal" origem="EUA"
+Ago 08 15:14:00 serve01 canal_youtube: log="AVISO" message="Ainda nao se inscreveu no canal?"
+Ago 08 15:23:00 serve01 canal_youtube: log="AVISO" message="Ja deixou o like?"
