@@ -1,6 +1,15 @@
-Ago 08 15:00:00 serve01 canal_youtube: log="INFO" user="Rafael" action="se inscreveu no canal" origem="BR"
-Ago 08 15:02:00 serve01 canal_youtube: log="INFO" user="Marcelo" action="se inscreveu no canal" origem="EUA"
-Ago 08 15:05:00 serve01 canal_youtube: log="INFO" user="Rafael" action="Deixou o like" origem="BR"
-Ago 08 15:07:00 serve01 canal_youtube: log="INFO" user="Marcelo" action="Comentou em um video do canal" origem="EUA"
+canal_youtube: time=[08/08/2023 15:00:00] log="INFO" user="Rafael" action="se inscreveu no canal" country="BR"
+canal_youtube: time=[08/08/2023 15:00:00] log="INFO" user="Marcelo" action="se inscreveu no canal" country="EUA"
+canal_youtube: time=[08/08/2023 15:00:00] log="INFO" user="Rafael" action="Deixou o like" country="BR"
+canal_youtube: time=[08/08/2023 15:00:00] log="INFO" user="Marcelo" action="Comentou em um video do canal" country="EUA"
+canal_youtube: time=[08/08/2023 15:00:00] log="AVISO" message="Ainda nao se inscreveu no canal?"
+canal_youtube: time=[08/08/2023 15:00:00] log="AVISO" message="Ja deixou o like?"
+
+_______________________________________________________________________________________________________________________
+
+Ago 08 15:00:00 serve01 canal_youtube: O user Rafael se inscreveu no canal do país BR
+Ago 08 15:02:00 serve01 canal_youtube: O user Marcelo se inscreveu no canal do país EUA
+Ago 08 15:05:00 serve01 canal_youtube: O user Rafael Deixou o like do país BR
+Ago 08 15:07:00 serve01 canal_youtube: O user Marcelo Comentou em um video do canal do país EUA
 Ago 08 15:14:00 serve01 canal_youtube: log="AVISO" message="Ainda nao se inscreveu no canal?"
 Ago 08 15:23:00 serve01 canal_youtube: log="AVISO" message="Ja deixou o like?"
