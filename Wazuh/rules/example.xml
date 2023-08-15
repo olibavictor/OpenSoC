@@ -1,0 +1,28 @@
+<group name="canal_youtube, inscreva_se,">
+  <rule id="100300" level="0">
+    <decoded_as>canal_youtube</decoded_as>
+    <description>Canal_Youtube Syslog</description>
+  </rule>
+  
+  <rule id="100301" level="3">
+    <if_sid>100300</if_sid>
+    <action>se inscreveu no canal</action>
+    <description>Temos um novo inscrito!</description>
+    <options>no_full_log</options>
+  </rule>
+  
+  <rule id="100302" level="3">
+    <if_sid>100300</if_sid>
+    <action>Deixou o like</action>
+    <description>Ganhamos um like no video!</description>
+    <options>no_full_log</options>
+  </rule>
+  
+  <rule id="100303" level="3">
+    <if_sid>100300</if_sid>
+    <action>Comentou em um video do canal</action>
+    <description>Alguem comentou no video!</description>
+    <options>no_full_log</options>
+  </rule>
+  
+</group>
