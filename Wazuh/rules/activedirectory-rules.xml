@@ -1,14 +1,12 @@
 <!--
-  -  Active Directory Rules
-  -  Author: Victor "Oliba" Oliveira
-  -  Detection Rules for Active Directory based on multiple data sources
+Active Directory Rules
+Author: Victor Oliveira
+Detection Rules for Active Directory based on multiple data sources
 -->
 
 <!-- Regras de detecção para usuários adicionados em grupos sensiveis ou privilegiados -->
-
 <group name="custom-rules, active directory,">
-
-  <rule id="100002" level="10">
+  <rule id="110002" level="10">
     <if_sid>60144</if_sid>
     <field name="win.eventdata.targetUserName">^Account Operators$|^Administrators$|^Backup Operators$</field>
     <options>no_full_log</options>
@@ -19,7 +17,7 @@
     <group>gdpr_IV_32.2,gdpr_IV_35.7.d,gpg13_7.10,group_changed,hipaa_164.312.a.2.I,hipaa_164.312.a.2.II,hipaa_164.312.b,nist_800_53_AC.2,nist_800_53_AC.7,nist_800_53_AU.14,nist_800_53_IA.4,pci_dss_10.2.5,pci_dss_8.1.2,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,win_group_changed,</group>
   </rule>
   
-  <rule id="100003" level="10">
+  <rule id="110003" level="10">
     <if_sid>60141</if_sid>
     <field name="win.eventdata.targetUserName">^Domain Admins$</field>
     <options>no_full_log</options>
@@ -30,7 +28,7 @@
     <group>gdpr_IV_32.2,gdpr_IV_35.7.d,gpg13_7.10,group_changed,hipaa_164.312.a.2.I,hipaa_164.312.a.2.II,hipaa_164.312.b,nist_800_53_AC.2,nist_800_53_AC.7,nist_800_53_AU.14,nist_800_53_IA.4,pci_dss_10.2.5,pci_dss_8.1.2,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,win_group_changed,</group>
   </rule>
 
-  <rule id="100004" level="10">
+  <rule id="110004" level="10">
     <if_sid>60151</if_sid>
     <field name="win.eventdata.targetUserName">^Enterprise Admins$|^Schema Admins$</field>
     <options>no_full_log</options>
@@ -42,8 +40,7 @@
   </rule>
   
 <!-- Regras de detecção para detectar atividades maliciosas envolvendo atividades de login -->
-
-  <rule id="100010" level="10" frequency="15" timeframe="240">
+  <rule id="110010" level="10" frequency="15" timeframe="240">
     <if_matched_sid>60122</if_matched_sid>
     <same_field>win.eventdata.targetUserName</same_field>
     <options>no_full_log</options>
@@ -55,7 +52,7 @@
     <group>authentication_failures,gdpr_IV_32.2,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AC.7,nist_800_53_AU.14,nist_800_53_SI.4,pci_dss_10.2.4,pci_dss_10.2.5,pci_dss_11.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
   </rule>
   
-  <rule id="100011" level="10" frequency="10" timeframe="240">
+  <rule id="110011" level="10" frequency="10" timeframe="240">
     <if_matched_sid>60122</if_matched_sid>
     <different_field>win.eventdata.targetUserName</different_field>
     <same_field>win.eventdata.ipAddress</same_field>
@@ -68,7 +65,7 @@
     <group>authentication_failures,gdpr_IV_32.2,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AC.7,nist_800_53_AU.14,nist_800_53_SI.4,pci_dss_10.2.4,pci_dss_10.2.5,pci_dss_11.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
   </rule>
   
-  <rule id="100012" level="10">
+  <rule id="110012" level="10">
     <if_sid>60122</if_sid>
     <field name="win.eventdata.subStatus">^0xC0000072$</field>
     <options>no_full_log</options>
@@ -80,7 +77,7 @@
     <group>authentication_failures,gdpr_IV_32.2,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AC.7,nist_800_53_AU.14,nist_800_53_SI.4,pci_dss_10.2.4,pci_dss_10.2.5,pci_dss_11.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
   </rule>
   
-  <rule id="100013" level="12">
+  <rule id="110013" level="12">
     <if_sid>60106</if_sid>
     <field name="win.system.eventID">^4624$</field>
     <field name="win.eventdata.logonType">^2$|^10$</field>
@@ -94,7 +91,7 @@
     <group>authentication_success,gdpr_IV_32.2,gpg13_7.1,gpg13_7.2,hipaa_164.312.b,nist_800_53_AC.7,nist_800_53_AU.14,pci_dss_10.2.5,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
   </rule>
   
-  <rule id="100014" level="12" frequency="2" timeframe="86400">
+  <rule id="110014" level="12" frequency="2" timeframe="86400">
     <if_matched_group>account_changed</if_matched_group>
     <field name="win.system.eventID">^4720$|^4726$</field>
     <same_field>win.eventdata.targetUserName</same_field>
@@ -108,7 +105,7 @@
     <group>account_changed,adduser,gdpr_IV_32.2,gdpr_IV_35.7.d,gpg13_7.10,hipaa_164.312.a.2.I,hipaa_164.312.a.2.II,hipaa_164.312.b,nist_800_53_AC.2,nist_800_53_AC.7,nist_800_53_AU.14,nist_800_53_IA.4,pci_dss_10.2.5,pci_dss_8.1.2,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
   </rule>
   
-  <rule id="100015" level="10" frequency="10" timeframe="240">
+  <rule id="110015" level="10" frequency="10" timeframe="240">
     <if_matched_sid>60115</if_matched_sid>
     <options>no_full_log</options>
     <description>Multiple user accounts blocked in short time</description>
@@ -118,5 +115,4 @@
     </mitre>
     <group>authentication_failures,gdpr_IV_35.7.d,gpg13_7.5,hipaa_164.312.a.1,nist_800_53_AC.7,nist_800_53_SI.4,pci_dss_11.4,pci_dss_8.1.6,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
   </rule>
-  
 </group>
