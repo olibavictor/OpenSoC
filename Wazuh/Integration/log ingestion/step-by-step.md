@@ -1,7 +1,7 @@
-###**1) Avalie o contexto da integração.**
+### **1) Avalie o contexto da integração.**
 Vamos partir do ponto onde você já validou a real necessidade daquela integração. Aí você partiria para análise do contexto. Valide se no Wazuh já existem decodificadores e regras para aquela tecnologia. Mesmo que exista, ainda é importante validar se é exatamente aquilo que procuro. Exemplo: Pode ser que queira monitorar regras específicas de trafego do meu firewall, embora existam decodificadores e regras para aquela solução, só existem regras focadas em VPN e Auditoria.
 
-###**2) Qual caminho seguir?**
+### **2) Qual caminho seguir?**
 Com a compreensão do contexto, decida qual a melhor alterativa.
 - 2.1)  Caso não tenha nenhum decodificador ou regra, terá que desenvolve-los do zero, como aprendemos no curso. Busque exemplos do Log que será recebido pelo Wazuh e desenvolva os recurso com base nisso.
 - 2.2) Caso exista decodificadores/regras ainda vale entender o que é mais viável. Customizar os recursos atuais ou desenvolve-los do zero? Você pode pegar exemplos dos logs que serão enviados e testa-los através da ferramenta "Ruleset Test" dentro da plataforma, assim terá uma visão do que o Wazuh já consegue fazer com aquele log. De repente, ele já até consegue decodificar os campos e precisa apenas de regras mais específicas.
