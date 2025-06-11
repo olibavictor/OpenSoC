@@ -53,7 +53,7 @@ spec:
       total_limit_size: 512MB
     format:
       app_name_field: test
-      type: single_value
+      type: json
     host: <adicione o endereço>
     insecure: true
     port: 514
