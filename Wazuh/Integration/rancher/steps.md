@@ -13,3 +13,6 @@ Faça a alteração do endereço remoto para onde serão enviado os logs
 Por padrão a configuração irá encaminhar todos os logs do cluster. Posteriormente você pode alterar isso.
 
 A configuração pode levar alguns poucos minutos para ter efeito. O mesmo se aplica a alterações futuras.
+
+### 4) Adicione o decodificador "0002-rancher-web-decoder.xml" presente nesse repositório no Wazuh que está recebendo as mensagens.
+O nome do decoder deve se manter exatamente o mesmo para que funcione de maneira adequada. O Wazuh processa os decoders por ordem alfabética e precisamos que ele seja processado antes do decoder json padrão.
