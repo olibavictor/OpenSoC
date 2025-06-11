@@ -1,0 +1,34 @@
+<decoder name="rancher-web-accesslog">
+    <type>web-log</type>
+    <prematch>^{\s*"stream":"stdout","logtag":"F","message"</prematch>
+</decoder>
+<decoder name="rancher-web-accesslog-default">
+    <type>web-log</type>
+    <parent>rancher-web-accesslog</parent>
+    <regex type="pcre2">"message":"(\S+)\s-\s-\s\[\S+ \S\d+]\s\\"(\w+) (\S+) HTTP\S+" (\d+) </regex>
+    <order>srcip, protocol, url, id</order>
+</decoder>
+<decoder name="rancher-web-accesslog-k">
+    <type>web-log</type>
+    <parent>rancher-web-accesslog</parent>
+    <regex type="pcre2">"pod_name"\s*:\s*"([^"]+)"\s*,\s*</regex>
+    <order>kubernetes.pod_name</order>
+</decoder>
+<decoder name="rancher-web-accesslog-k">
+    <type>web-log</type>
+    <parent>rancher-web-accesslog</parent>
+    <regex type="pcre2">"namespace_name"\s*:\s*"([^"]+)"\s*,\s*</regex>
+    <order>kubernetes.namespace</order>
+</decoder>
+<decoder name="rancher-web-accesslog-k">
+    <type>web-log</type>
+    <parent>rancher-web-accesslog</parent>
+    <regex type="pcre2">"container_name"\s*:\s*"([^"]+)"\s*,\s*</regex>
+    <order>kubernetes.container_name</order>
+</decoder>
+<decoder name="rancher-web-accesslog-k">
+    <type>web-log</type>
+    <parent>rancher-web-accesslog</parent>
+    <regex type="pcre2">"container_image"\s*:\s*"([^"]+)"</regex>
+    <order>kubernetes.container_image</order>
+</decoder>
