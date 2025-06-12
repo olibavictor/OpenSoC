@@ -1,7 +1,7 @@
 apiVersion: logging.banzaicloud.io/v1beta1
 kind: ClusterOutput
 metadata:
-  name: "example-syslog"
+  name: "wazuh-remote-syslog"
   namespace: "cattle-logging-system"
 spec:
   syslog:
