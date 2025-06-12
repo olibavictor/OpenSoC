@@ -1,48 +1,8 @@
 apiVersion: logging.banzaicloud.io/v1beta1
 kind: ClusterOutput
 metadata:
-  creationTimestamp: '2025-06-11T15:16:48Z'
-  generation: 2
-  managedFields:
-    - apiVersion: logging.banzaicloud.io/v1beta1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:status:
-          .: {}
-          f:active: {}
-      manager: manager
-      operation: Update
-      subresource: status
-      time: '2025-06-11T15:16:48Z'
-    - apiVersion: logging.banzaicloud.io/v1beta1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          .: {}
-          f:syslog:
-            .: {}
-            f:buffer:
-              .: {}
-              f:flush_interval: {}
-              f:timekey: {}
-              f:timekey_use_utc: {}
-              f:timekey_wait: {}
-              f:total_limit_size: {}
-            f:format:
-              .: {}
-              f:app_name_field: {}
-              f:type: {}
-            f:host: {}
-            f:insecure: {}
-            f:port: {}
-            f:transport: {}
-      manager: rancher
-      operation: Update
-      time: '2025-06-11T15:16:48Z'
-  name: wazuh-remote-syslog
-  namespace: cattle-logging-system
-  resourceVersion: '591263'
-  uid: 49f75daa-2f60-4f98-8b3f-34dbbcf75810
+  name: "example-syslog"
+  namespace: "cattle-logging-system"
 spec:
   syslog:
     buffer:
