@@ -8,8 +8,14 @@ import uuid
 from thehive4py.api import TheHiveApi
 from thehive4py.models import Alert, AlertArtifact
 
-#start user config
+#  <integration>
+#    <name>custom-thehive</name>
+#    <hook_url>http://<thehive-ip>:9000</hook_url>
+#    <api_key><SUA-API></api_key>
+#    <alert_format>json</alert_format>
+#  </integration>
 
+#start user config
 # Global vars
 
 #threshold for wazuh rules level
