@@ -50,7 +50,7 @@ systemctl restart filebeat
 
 ### Execute o comando abaixo para iniciar o processo de restore
 ```
-nohup ./recovery.py -eps 500 -min 2023-06-10T00:00:00 -max 2023-06-18T23:59:59 -o /tmp/recovery.json -log ./recovery.log -sz 2.5 &
+nohup ./recovery.py -eps 500 -min 2023-06-10T00:00:00 -max 2023-06-18T23:59:59 -o /tmp/recovery.json -log ./recovery.log -w /tmp -sz 2.5 &
 ```
 > nohup garante que mesmo encerrando a sessão remota o processo de restore seguirá rodando.
 
