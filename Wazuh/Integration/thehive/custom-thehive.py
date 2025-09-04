@@ -134,6 +134,20 @@ def generate_alert(format_alt, artifacts_dict,w_alert):
     for key,value in artifacts_dict.items():
         for val in value:
             artifacts.append(AlertArtifact(dataType=key, data=val))
+    
+    alert_level = w_alert['rule']['level']
+
+    if alert_level == 10:
+        severity = 1
+    elif alert_level in [11, 12]:
+        severity = 2
+    elif alert_level in [13, 14]:
+        severity = 3
+    elif alert_level == 15:
+        severity = 4
+    else:
+        severity = 1
+
     alert = Alert(title=w_alert['rule']['description'],
               tlp=2,
               tags=['wazuh', 
@@ -141,6 +155,7 @@ def generate_alert(format_alt, artifacts_dict,w_alert):
               'agent_name='+w_alert['agent']['name'],
               'agent_id='+w_alert['agent']['id'],
               'agent_ip='+w_alert['agent']['ip'],],
+              severity=severity,
               description=format_alt ,
               type='wazuh_alert',
               source='wazuh',
