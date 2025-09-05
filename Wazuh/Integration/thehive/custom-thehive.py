@@ -150,8 +150,7 @@ def generate_alert(format_alt, artifacts_dict,w_alert):
 
     alert = Alert(title=w_alert['rule']['description'],
               tlp=2,
-              tags=[w_alert['rule']['id'],
-              w_alert['rule']['groups'],],
+              tags=[w_alert['rule']['id'],],
               severity=severity,
               description=format_alt ,
               type='wazuh_alert',
